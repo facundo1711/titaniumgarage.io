@@ -332,6 +332,59 @@ footer {
   background-color: #6F685E;
   transform: translateY(-3px);
 }
+/* ================= NOSOTROS ================= */
+.nosotros {
+  padding: 50px 20px;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.nosotros h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Grid adaptable */
+.grid-nosotros {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.persona-card {
+  background: #8B8378;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.persona-card:hover {
+  transform: translateY(-10px);
+}
+
+.persona-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.persona-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.persona-card p {
+  font-size: 0.95rem;
+  color: #ffffff;
+  line-height: 1.5;
+}
 
 /* ================= RESPONSIVE ================= */
 
@@ -604,5 +657,43 @@ footer {
 
   .grid-servicios {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .nosotros h2 {
+    font-size: 1.7rem;
+  }
+
+  .persona-card img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .persona-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .persona-card p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nosotros {
+    padding: 30px 10px;
+  }
+
+  .grid-nosotros {
+    grid-template-columns: 1fr; /* se apilan en una sola columna */
+    gap: 20px;
+  }
+
+  .persona-card {
+    padding: 15px;
+  }
+
+  .persona-card img {
+    width: 90px;
+    height: 90px;
   }
 }
