@@ -1,0 +1,228 @@
+/* Custom styles to complement Bootstrap and keep Titanium Garage identity */
+:root {
+  --tg-base-oscuro: #d6d6d6; /*  base principal */
+  --tg-negro-profundo: #999999; /*  (para footer y fondo de carrusel) */
+  --tg-claro: #000000; /* Blanco PURO para texto principal y contraste */
+  --tg-acento-metal: #000000; 
+  --tg-gris-texto: #616161; /* Gris claro para textos secundarios */
+ /*  Color de contraste (para tarjetas MVV y formularios/servicios) */
+  --tg-contraste-card: #797878a6; 
+}
+html, body {
+    height: 100%; /* Asegura que la altura sea 100% del viewport*/
+}
+body {
+  font-family: Arial, sans-serif;
+  padding-top: 70px; /* for fixed navbar*/
+  background-color: var(--tg-base-oscuro); /* FONDO OSCURO EN TODO EL CUERPO */
+  color: var(--tg-claro); /* Texto claro por defecto */
+  
+  /* Configuración Flexbox para Sticky Footer*/
+  display: flex;
+  flex-direction: column;
+}
+main {
+    flex-grow: 1; /* Permite que el contenido principal crezca y empuje el footer*/
+}
+/* NAVBAR: Fija, Sólida y Negra Absoluta */
+.navbar {
+    background-color: var(--tg-negro-profundo) !important; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.8); 
+    border-bottom: 2px solid var(--tg-acento-metal);
+}
+.navbar-brand img {
+  height: 40px;
+  width: auto;
+  margin-right: 8px;
+}
+.navbar-brand span {
+    color: var(--tg-acento-metal) !important; 
+    font-weight: bold;
+}
+.nav-link {
+    color: var(--tg-gris-texto) !important;
+}
+.nav-link.active, .nav-link:hover {
+    color: var(--tg-claro) !important; 
+    border-bottom: 1px solid var(--tg-acento-metal);
+}
+
+
+/* Footer */
+.site-footer {
+  background-color: var(--tg-negro-profundo); 
+  color: var(--tg-gris-texto);
+  padding: 12px 0;
+  text-align: center;
+  box-shadow: 0 -5px 10px rgba(112, 112, 112, 0.8); 
+  flex-shrink: 0;
+}
+
+/* Hero Carousel: Mantiene oscuro */
+.hero-carousel .carousel-item {
+  height: 65vh;
+  min-height: 320px;
+  background: var(--tg-base-oscuro);
+}
+.hero-carousel .carousel-item img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8; 
+  border-radius: 10px;
+}
+
+/* Sección de Bienvenida */
+.bienvenida {
+    background-color: var(--tg-base-oscuro);
+    color: var(--tg-claro);
+}
+
+/* SERVICIOS: FONDO AJUSTADO A CONTRASTE CARD */
+.services {
+    background-color: var(--tg-base-oscuro);
+}
+.services h2 {
+    color: var(--tg-acento-metal) !important; 
+}
+.services .card {
+  border: 1px solid var(--tg-acento-metal); 
+  background: var(--tg-contraste-card); 
+  color: var(--tg-claro);
+  box-shadow: 0 4px 20px rgba(134, 134, 134, 0.7); 
+}
+.services .card-title {
+    color: var(--tg-acento-metal); 
+}
+
+/* PRODUCTOS Y CARRUSELES */
+.product-card {
+    background-color: var(--tg-contraste-card); 
+    color: var(--tg-claro);
+    border: 1px solid var(--tg-acento-metal);
+    box-shadow: 0 4px 15px rgba(189, 189, 189, 0.5); 
+    border-radius: .375rem; 
+}
+.product-card .card-title {
+    color: var(--tg-acento-metal);
+}
+.product-card img {
+  height: 300px;
+  object-fit: cover;
+  border-top-left-radius: .375rem;
+  border-top-right-radius: .375rem;
+  border-bottom: 1px solid rgb(65, 65, 65); 
+}
+.carousel-products .carousel-item {
+    padding: 0 10px; 
+}
+.carousel-products .carousel-item .product-card {
+    margin: 0; 
+}
+
+/* Nosotros */
+.persona-card {
+    background-color: var(--tg-contraste-card);
+    color: var(--tg-claro);
+    border: 1px solid var(--tg-acento-metal);
+    box-shadow: 0 4px 15px rgba(133, 133, 133, 0.753); 
+}
+
+/* MVV: CLASE CONTENEDORA GENERAL (solo padding) */
+.mvv-container-section {
+    padding: 20px 0;
+}
+
+/* NUEVA CLASE PARA CADA TARJETA INDIVIDUAL DE MISION/VISION/VALORES */
+.mvv-item-card {
+    background-color: var(--tg-contraste-card) !important; 
+    color: var(--tg-claro);
+    border: 1px solid var(--tg-acento-metal);
+    box-shadow: 0 4px 15px rgba(168, 168, 168, 0.5);
+    padding: 20px;
+    border-radius: 8px;
+    min-height: 250px; 
+    display: flex;
+    flex-direction: column;
+    /* CAMBIOS CLAVE PARA CENTRADO VERTICAL: */
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center; /* Centra los items horizontalmente (Flexbox) */
+    text-align: center; /* Centra el texto */
+}
+.mvv-item-card h4.text-primary, .mvv-item-card h3 {
+    color: var(--tg-acento-metal) !important;
+}
+.mvv-item-card .list-unstyled {
+    padding-left: 0; 
+    text-align: center;
+    list-style-position: inside; 
+    margin-bottom: 0; /* Elimina el margen por defecto para centrado vertical */
+}
+
+.persona-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 12px;
+}
+.form-container {
+  max-width: 560px;
+  margin: 0 auto;
+  background-color: var(--tg-contraste-card); 
+  color: var(--tg-claro); 
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 8px 15px rgba(167, 167, 167, 0.5);
+}
+/* Estilos para que el contenido del formulario se vea bien */
+.form-container h2, .form-container h3, .form-container label {
+    color: var(--tg-claro) !important;
+}
+.form-container .form-control, .form-container .form-select {
+    background-color: var(--tg-base-oscuro); 
+    color: var(--tg-claro);
+    border: 1px solid var(--tg-acento-metal);
+}
+
+/* Small tweaks*/
+.card.h-100 { min-height: 100%; }
+
+/* Estilos para carrusel */
+#heroCarousel .carousel-control-prev-icon,
+#heroCarousel .carousel-control-next-icon,
+#productosCarousel .carousel-control-prev-icon,
+#productosCarousel .carousel-control-next-icon,
+#vehiculosCarousel .carousel-control-prev-icon,
+#vehiculosCarousel .carousel-control-next-icon {
+    background-color: var(--tg-negro-profundo); 
+    border: 2px solid var(--tg-acento-metal);
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    opacity: 1; 
+}
+
+/* Contacto rápido (Contraste en el botón) */
+.contacto {
+    background-color: var(--tg-base-oscuro);
+}
+.contacto h2 {
+    color: var(--tg-acento-metal);
+}
+.contacto p {
+    color: var(--tg-gris-texto);
+}
+.contacto .btn-light {
+    background-color: var(--tg-acento-metal);
+    color: var(--tg-base-oscuro);
+    border: 2px solid var(--tg-acento-metal); 
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: all 0.3s;
+}
+.contacto .btn-light:hover {
+    background-color: var(--tg-base-oscuro);
+    color: var(--tg-acento-metal);
+    border: 2px solid var(--tg-acento-metal);
+}
